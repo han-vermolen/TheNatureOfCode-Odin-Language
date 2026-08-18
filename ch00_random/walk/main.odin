@@ -1,7 +1,7 @@
 package walk
 
 /*
-This is the Random walk example 0.1 from the Nature of Code book.
+Example 0.1: A Traditional Random Walk
 */
 
 import "core:math/rand"
@@ -34,6 +34,7 @@ walker_move :: proc(w: ^Walker) {
 
 main :: proc() {
 	rl.InitWindow(WIDTH, HEIGHT, "Example 0.1")
+	rl.SetTargetFPS(60)
 	walker := walker_init()
 
 	canvas := rl.LoadRenderTexture(WIDTH, HEIGHT)

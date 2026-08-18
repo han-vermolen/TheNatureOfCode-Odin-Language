@@ -1,5 +1,9 @@
 package rand_dist
 
+/*
+Example 0.2: A Random-Number Distribution
+*/
+
 import "core:math/rand"
 import rl "vendor:raylib"
 
