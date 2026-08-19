@@ -32,8 +32,8 @@ book's own sequencing (vectors arrive in ch. 1).
 | 0.2: A Random-Number Distribution      | `ch00_random/rand_dist`          | ✅       |
 | 0.3: Walker Biased Right               | `ch00_random/leaning_walk`     | ✅       |
 | 0.4: Gaussian Distribution (histogram) | `ch00_random/gaussian_distribution` | ✅     |
-| 0.5: An Accept-Reject Distribution     | `ch00_random/accept_reject_dist` | ⬜     |
-| 0.6: Perlin Noise Walker               | `ch00_random/noise_walk`         | ⬜     |
+| 0.5: An Accept-Reject Distribution     | `ch00_random/accept_reject_distribution` | ✅     |
+| 0.6: Perlin Noise Walker               | `ch00_random/perlin_noise_walk`  | ✅       |
 
 Extra practice pool (exercises 0.1–0.10): see reference doc.
 

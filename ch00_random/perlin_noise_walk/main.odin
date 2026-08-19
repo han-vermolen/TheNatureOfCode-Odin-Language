@@ -1,7 +1,23 @@
 /*
 Implementation note:
+The core:math/noise package's noise_2d comes closest to the noise() function
+used in the original example made with p5.js. However, it's not the same noise
+as used by the book's code. Without explaining too deeply, the implementation
+from the Odin package is actually a bit nicer. (less artifacting)
 
+API differences that are noteworthy:
+- P5.js returns a range of 0..1 while noise_2d returns one of -1..1.
+    This is why the remap looks different than the map from
+    the book's example code
 
+- P5.js uses a global noiseSeed while noise_2d takes it as its first argument.
+
+- Dimensions are different for P5.js than the minimal dimension
+    needed for noise_xd in core:math/noise.
+    P5.js allows just 1 dimension while odin's package needs at least 2.
+    This is why we need the { w.tx, 0 } and {w.ty, 0}
+
+It won't be pixel perfect, but it'll do the job.
 */
 
 package perlin_noise_walk
