@@ -9,11 +9,11 @@ Though I own a hardcopy of the book, I am using the online version so I can easi
 
 ## Status
 
-Chapter 0's random walk is done. Everything else is still ahead. `PROGRESS.md` has a one-line "what I'm doing right now" pointer, and `doc/roadmap.md` has the full breakdown every sketch, mapped to a book chapter, with a status.
+`PROGRESS.md` has a one-line "what I'm doing right now" pointer, and `doc/roadmap.md` has the full breakdown every sketch, mapped to a book chapter, with a status.
 
 ## Running a sketch
 
-Each sketch is its own Odin package:
+Each sketch is its own Odin package, for example:
 
 ```
 odin run ch00_random/walk
@@ -25,7 +25,7 @@ Formatting:
 odinfmt ch00_random/walk -w
 ```
 
-You just need a working Odin install (Raylib bindings ship with the compiler), no separate dependency to fetch.
+You need a working Odin install (Raylib bindings ship with the compiler), no separate dependency to fetch.
 One gotcha worth knowing. Some distro packages (CachyOS's `odin` package, at least as of this writing) 
 ship the vendored Raylib libraries as unresolved Git LFS pointer files instead of the actual compiled `.a`/`.so`. 
 If `odin run` fails at the link step with something like `file format not recognized; treating as linker script`, 
