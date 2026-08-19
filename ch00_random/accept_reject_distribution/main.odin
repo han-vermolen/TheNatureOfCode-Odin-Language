@@ -1,31 +1,30 @@
-package rand_dist
+package accept_reject_distribution
 
 /*
-Example 0.2: A Random-Number Distribution
-https://natureofcode.com/random/#example-02-a-random-number-distribution
+Example 0.5: An Accept-Reject Distribution
+https://natureofcode.com/random/#example-05-an-accept-reject-distribution
 */
 
 import "core:math/rand"
 import rl "vendor:raylib"
 
-WIDTH :  i32 : 640
-HEIGHT : i32 : 240
+WIDTH :i32: 640
+HEIGHT :i32: 240
 TOTAL :  int : 20
 
-main :: proc() {
-    rl.InitWindow(WIDTH, HEIGHT, "Example 0.2")
-    // p5.js works at 60 FPS. Mimic that here.
+main :: proc () {
+    rl.InitWindow(WIDTH, HEIGHT, "example 0.5")
     rl.SetTargetFPS(60)
 
     random_counts : [TOTAL]i32 = { }
     w := WIDTH / len(random_counts)
 
-    for !rl.WindowShouldClose(){
+    for !rl.WindowShouldClose() {
         rl.BeginDrawing()
-        rl.ClearBackground(rl.WHITE)
         defer rl.EndDrawing()
+        rl.ClearBackground(rl.WHITE)
 
-        index := rand.int_max(TOTAL)
+        index := int(accept_reject() * len(random_counts))
         random_counts[index] += 1
         for count, x in random_counts {
         /* Deviation from the book:
@@ -47,4 +46,15 @@ main :: proc() {
         }
     }
     rl.CloseWindow()
+}
+
+accept_reject :: proc() -> f32 {
+    for {
+        r1 := rand.float32()
+        probability := r1
+        r2 := rand.float32()
+        if (r2 < probability) {
+            return r1
+        }
+    }
 }

@@ -2,6 +2,7 @@ package gaussian_distribution
 
 /*
 Example 0.4: A Gaussian Distribution
+https://natureofcode.com/random/#example-04-a-gaussian-distribution
 */
 
 import "core:math/rand"
