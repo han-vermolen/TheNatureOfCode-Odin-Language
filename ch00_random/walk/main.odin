@@ -40,6 +40,10 @@ main :: proc() {
 	canvas := rl.LoadRenderTexture(WIDTH, HEIGHT)
 	defer rl.UnloadRenderTexture(canvas)
 
+	rl.BeginTextureMode(canvas)
+	rl.ClearBackground(rl.WHITE)
+	rl.EndTextureMode()
+
 	for !rl.WindowShouldClose() {
 		walker_move(&walker)
 
@@ -50,7 +54,6 @@ main :: proc() {
 		rl.BeginDrawing()
 		defer rl.EndDrawing()
 
-		rl.ClearBackground(rl.BLACK)
 		rl.DrawTextureRec(
 			canvas.texture,
 			{0, 0, f32(WIDTH), -f32(HEIGHT)},
