@@ -1,3 +1,10 @@
+/*
+Implementation note:
+The two DrawCircleLines approach has reached its limits for this sketch.
+So I decided to deviate from a slightly stricter port to using DrawRing
+and enabling MSAA.
+*/
+
 package bouncing_ball_no_vectors
 
 /*
@@ -11,6 +18,7 @@ WIDTH :: 640
 HEIGHT :: 240
 
 main :: proc() {
+    rl.SetConfigFlags({.MSAA_4X_HINT})
     rl.InitWindow(WIDTH, HEIGHT, "example 1.1")
     rl.SetTargetFPS(60)
 
@@ -34,9 +42,7 @@ main :: proc() {
         defer rl.EndDrawing()
         rl.ClearBackground(rl.WHITE)
         rl.DrawCircle(i32(x), i32(y), 24, rl.Color{127, 127, 127, 255})
-        rl.DrawCircleLines(i32(x), i32(y), 24, rl.BLACK)
-        rl.DrawCircleLines(i32(x) + 1, i32(y) + 1, 24, rl.BLACK)
-
+        rl.DrawRing({x, y}, 23.5, 25.0, 0, 360, 64, rl.BLACK)
     }
     rl.CloseWindow()
 }
