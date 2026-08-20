@@ -41,8 +41,13 @@ Extra practice pool (exercises 0.1–0.10): see reference doc.
 
 New surface: `[2]f32`, `core:math/linalg` (length, normalize, sub, mult)
 
+1.1 is the book's own contrast example — bouncing ball *before* vectors are
+introduced — so it deliberately still uses separate `x`, `y` floats, not
+`[2]f32`. Vectors proper start at 1.2.
+
 | Sketch | Package | Status |
 |---|---|---|
+| 1.1 Bouncing Ball with No Vectors | `ch01_vectors/bouncing_ball_no_vectors` | ✅ |
 | 1.2 Bouncing Ball with Vectors | `ch01_vectors/bounce` | ⬜ |
 | 1.3–1.6 Vector Subtraction / Multiply / Magnitude / Normalize (playground) | `ch01_vectors/vector_ops` | ⬜ |
 | 1.7 Motion 101 (velocity) | `ch01_vectors/motion_velocity` | ⬜ |
