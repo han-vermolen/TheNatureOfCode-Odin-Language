@@ -1,0 +1,9 @@
+# Keep blank issues on. On a solo project, the fastest possible capture path
+# matters more than consistent metadata — a template you skip is worse than
+# a one-line issue you actually file.
+blank_issues_enabled: true
+
+# contact_links:
+#   - name: Project notes
+#     url: https://example.com/notes
+#     about: Long-form thinking that isn't issue-shaped
