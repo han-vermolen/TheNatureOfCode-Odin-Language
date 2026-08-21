@@ -48,7 +48,7 @@ introduced — so it deliberately still uses separate `x`, `y` floats, not
 | Sketch | Package | Status |
 |---|---|---|
 | 1.1 Bouncing Ball with No Vectors | `ch01_vectors/bouncing_ball_no_vectors` | ✅ |
-| 1.2 Bouncing Ball with Vectors | `ch01_vectors/bounce` | ⬜ |
+| 1.2 Bouncing Ball with Vectors | `ch01_vectors/bouncing_ball_with_vectors` | ✅ |
 | 1.3–1.6 Vector Subtraction / Multiply / Magnitude / Normalize (playground) | `ch01_vectors/vector_ops` | ⬜ |
 | 1.7 Motion 101 (velocity) | `ch01_vectors/motion_velocity` | ⬜ |
 | 1.8 Motion 101 (velocity + constant acceleration) | `ch01_vectors/motion_accel` | ⬜ |

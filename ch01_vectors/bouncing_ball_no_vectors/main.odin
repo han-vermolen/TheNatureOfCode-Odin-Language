@@ -32,10 +32,10 @@ main :: proc() {
         y = y + yspeed
 
         if x > f32(WIDTH) || x < 0 {
-            xspeed = xspeed * -1
+            xspeed *= -1
         }
         if y > f32(HEIGHT) || y < 0 {
-            yspeed = yspeed * -1
+            yspeed *= -1
         }
 
         rl.BeginDrawing()
