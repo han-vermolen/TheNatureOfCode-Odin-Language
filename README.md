@@ -3,7 +3,7 @@
 A port of Daniel Shiffman's [**The Nature of Code**](https://natureofcode.com/) to Odin, rendered with Raylib. I'm using it to learn Odin manual memory, pointers, data-oriented layout etc. instead of just reading about it.
 Same simulations and visual results as the book (for the most part), but built the way Odin wants things built, not a straight OO port of the p5.js originals.
 
-This isn't trying to be a library or a tutorial for anyone else. It's me working through the book, chapter by chapter, at whatever pace I actually read it at.
+This is a learning project rather than a library or formal tutorial, but every completed sketch is self-contained and runnable.
 
 Though I own a hardcopy of the book, I am using the online version so I can easily update my code as the book is updated.
 
