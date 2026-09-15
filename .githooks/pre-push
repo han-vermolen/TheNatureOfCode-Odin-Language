@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+#
+# pre-push: scan the commits that are about to leave this machine.
+#
+# Backstop for the pre-commit hook: catches commits made with --no-verify, or
+# made before these hooks existed. The remote is public, so this is the last
+# point at which a mistake is still private.
+#
+# git calls this as:  pre-push <remote-name> <remote-url>
+# and feeds it, on stdin, one line per ref being pushed:
+#   <local-ref> <local-sha> <remote-ref> <remote-sha>
+
+set -uo pipefail
+
+remote_name="${1:-origin}"
+
+if ! command -v betterleaks >/dev/null 2>&1; then
+    echo "pre-push: betterleaks is not installed - refusing to push." >&2
+    echo "  Install: see the \"Secret scanning\" section of README.md" >&2
+    exit 1
+fi
+
+# The all-zeros sha git uses to mean "this ref does not exist". Computed rather
+# than hardcoded so it is the right length under both sha1 and sha256 repos.
+zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
+
+status=0
+
+while read -r _local_ref local_sha _remote_ref remote_sha; do
+    # Deleting a remote branch: nothing is being sent, nothing to scan.
+    if [ "$local_sha" = "$zero" ]; then
+        continue
+    fi
+
+    if [ "$remote_sha" = "$zero" ]; then
+        # New branch on the remote: scan every commit on it that the remote
+        # does not already have somewhere else, rather than its whole history.
+        log_opts="$local_sha --not --remotes=$remote_name"
+    else
+        # Existing branch: just the new commits.
+        log_opts="$remote_sha..$local_sha"
+    fi
+
+    if ! betterleaks git --log-opts="$log_opts" --redact --no-banner --verbose; then
+        status=1
+    fi
+done
+
+if [ "$status" -ne 0 ]; then
+    cat >&2 <<'MSG'
+
+------------------------------------------------------------------
+betterleaks found a possible secret in the commits you are pushing.
+The push was blocked - the secret has NOT left this machine.
+
+It is already in local history, so removing it means rewriting:
+
+  Most recent commit, not yet pushed:
+      git rm --cached <file> && git commit --amend
+
+  Anything deeper:
+      git filter-repo --invert-paths --path <file>
+
+Rotate the credential regardless. Treat it as burned.
+------------------------------------------------------------------
+MSG
+fi
+
+exit "$status"

@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+#
+# pre-commit: refuse to create a commit whose staged changes contain a secret.
+#
+# This is the hook that actually saves you. Once a secret is inside a commit,
+# getting it out means rewriting history (git filter-repo), not just deleting
+# the line in a follow-up commit.
+#
+# Scans the staged diff only, so it is fast and looks at exactly what you are
+# about to commit.
+#
+# If something is a genuine false positive, prefer (in this order):
+#   1. a `betterleaks:allow` comment on the offending line
+#   2. a filter entry in .betterleaks.toml
+#   3. git commit --no-verify        <- leaves no record, use as a last resort
+
+set -uo pipefail
+
+if ! command -v betterleaks >/dev/null 2>&1; then
+    cat >&2 <<'MSG'
+pre-commit: betterleaks is not installed - refusing to commit.
+
+  Install: see the "Secret scanning" section of README.md
+  Or drop the hooks: git config --unset core.hooksPath
+
+Failing closed on purpose: a secrets guard that silently does nothing when the
+scanner is missing is worse than no guard at all, because you would trust it.
+MSG
+    exit 1
+fi
+
+betterleaks git --staged --redact --no-banner --verbose
+status=$?
+
+if [ "$status" -ne 0 ]; then
+    cat >&2 <<'MSG'
+
+------------------------------------------------------------------
+betterleaks found a possible secret in your STAGED changes.
+The commit was blocked. Nothing has entered git history.
+
+  Unstage the file:   git restore --staged <file>
+  See what is staged: git diff --cached
+
+Secrets above are redacted. Rotate anything that was real.
+------------------------------------------------------------------
+MSG
+fi
+
+exit "$status"

@@ -1,0 +1,46 @@
+# betterleaks configuration.
+#
+# Picked up automatically because it sits at the repo root, so the hooks in
+# .githooks/ do not need to point at it.
+#
+# Right now this only turns on the built-in rules. It exists as the place to
+# record repo-specific exceptions and rules, so that they live IN the repo where
+# they are reviewable, instead of being waved through with
+# `git commit --no-verify`, which leaves no trace at all.
+
+[extend]
+# Use the built-in rule set: 417 rules covering known token shapes (AWS,
+# GitHub PATs, Anthropic keys, PEM private keys, and so on) plus generic
+# high-entropy detection.
+#
+# NOTE: a top-level `prefilter` or `filter` written in THIS file is silently
+# ignored when useDefault is on - the built-in ones win, and you get no warning,
+# just a scanner that quietly stops finding things. Verified on betterleaks
+# 1.8.1. Use the escape hatches at the bottom of this file instead.
+useDefault = true
+
+# --- Adding your own rules -------------------------------------------------
+#
+# The built-in rules only catch secrets with a recognisable SHAPE. If this repo
+# ever gains a credential format of its own:
+#
+# [[rules]]
+# id          = "noc-odin-internal-token"
+# description = "Internal token"
+# regex       = '''noc_tok_[0-9a-zA-Z]{32}'''
+# keywords    = ["noc_tok_"]   # cheap Aho-Corasick prescreen before the regex
+#
+# A [[rules]] entry may carry its own `filter` (an Expr expression over
+# `finding` and `attributes`) - per-rule filters DO work, unlike a global one.
+#
+# --- Handling a false positive ---------------------------------------------
+#
+# 1. Inline, for one line - visible to anyone reading the code, so prefer it:
+#
+#        KEY :: "not-really-a-secret"  // betterleaks:allow
+#
+# 2. By fingerprint, for something you cannot annotate. Get the fingerprint
+#    (`path:rule-id:line`) from a report and put one per line in
+#    .betterleaksignore at the repo root:
+#
+#        betterleaks dir . -f json -r - | jq -r '.[].Fingerprint'
