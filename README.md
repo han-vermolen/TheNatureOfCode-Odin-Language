@@ -87,8 +87,8 @@ unlike a local hook it cannot be skipped with `--no-verify`.
 - `doc/roadmap.md` — per-sketch status, in strict book chapter order.
 - `doc/use_of_ai.md` — what AI is and isn't allowed to do in this repo.
 - `PROGRESS.md` — current pointer, one paragraph.
-- `.githooks/` — secret-scanning pre-commit and pre-push hooks. (Taken from other repos and possibly AI generated)
-- `.betterleaks.toml` — scanner rules and false-positive exceptions. (Taken from other repos and possibly AI generated)
+- `.githooks/` — secret-scanning pre-commit and pre-push hooks. (Taken from other repos and possibly AI-generated)
+- `.betterleaks.toml` — scanner rules and false-positive exceptions. (Taken from other repos and possibly AI-generated)
 
 ## Why Odin instead of just running the book's own p5.js code
 
