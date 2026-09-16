@@ -24,7 +24,8 @@ package perlin_noise_walk
 
 /*
 Example 0.6: A Perlin Noise Walker
-https://natureofcode.com/random/#example-06-a-perlin-noise-walker
+Book:   https://natureofcode.com/random/#example-06-a-perlin-noise-walker
+Sketch: https://editor.p5js.org/natureofcode/sketches/qyNwGUy59
 */
 
 import "core:math"

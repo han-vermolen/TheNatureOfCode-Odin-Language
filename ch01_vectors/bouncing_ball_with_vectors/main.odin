@@ -2,7 +2,8 @@ package bouncing_ball_with_vectors
 
 /*
 Example 1.2: Bouncing Ball with Vectors!
-https://natureofcode.com/vectors/#example-12-bouncing-ball-with-vectors
+Book:   https://natureofcode.com/vectors/#example-12-bouncing-ball-with-vectors
+Sketch: https://editor.p5js.org/natureofcode/sketches/qU5oPJijX
 */
 
 import rl "vendor:raylib"

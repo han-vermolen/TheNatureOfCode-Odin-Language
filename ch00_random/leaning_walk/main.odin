@@ -2,7 +2,8 @@ package leaning_walk
 
 /*
 Example 0.3: A Walker That Tends to Move to the Right
-https://natureofcode.com/random/#example-03-a-walker-that-tends-to-move-to-the-right
+Book:   https://natureofcode.com/random/#example-03-a-walker-that-tends-to-move-to-the-right
+Sketch: https://editor.p5js.org/natureofcode/sketches/iAjs_70DF
 */
 
 import "core:math/rand"

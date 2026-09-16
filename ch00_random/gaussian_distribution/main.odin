@@ -2,7 +2,8 @@ package gaussian_distribution
 
 /*
 Example 0.4: A Gaussian Distribution
-https://natureofcode.com/random/#example-04-a-gaussian-distribution
+Book:   https://natureofcode.com/random/#example-04-a-gaussian-distribution
+Sketch: https://editor.p5js.org/natureofcode/sketches/Yk_eSiNOR
 */
 
 import "core:math/rand"

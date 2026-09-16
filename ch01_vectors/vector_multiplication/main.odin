@@ -8,7 +8,8 @@ package vector_multiplication
 
 /*
 Example 1.4: Multiplying a Vector
-https://natureofcode.com/vectors/#example-14-multiplying-a-vector
+Book:   https://natureofcode.com/vectors/#example-14-multiplying-a-vector
+Sketch: https://editor.p5js.org/natureofcode/sketches/VQfwqpDlv
 */
 
 import rl "vendor:raylib"

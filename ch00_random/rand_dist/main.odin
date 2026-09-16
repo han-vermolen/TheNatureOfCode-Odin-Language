@@ -2,7 +2,8 @@ package rand_dist
 
 /*
 Example 0.2: A Random-Number Distribution
-https://natureofcode.com/random/#example-02-a-random-number-distribution
+Book:   https://natureofcode.com/random/#example-02-a-random-number-distribution
+Sketch: https://editor.p5js.org/natureofcode/sketches/u4vTwZuhT
 */
 
 import "core:math/rand"

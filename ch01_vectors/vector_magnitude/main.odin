@@ -8,7 +8,8 @@ package vector_magnitude
 
 /*
 Example 1.5: Vector Magnitude
-https://natureofcode.com/vectors/#example-15-vector-magnitude
+Book:   https://natureofcode.com/vectors/#example-15-vector-magnitude
+Sketch: https://editor.p5js.org/natureofcode/sketches/rld_CtioUU
 */
 
 import "core:math/linalg"

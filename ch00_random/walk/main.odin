@@ -2,7 +2,8 @@ package walk
 
 /*
 Example 0.1: A Traditional Random Walk
-https://natureofcode.com/random/#example-01-a-traditional-random-walk
+Book:   https://natureofcode.com/random/#example-01-a-traditional-random-walk
+Sketch: https://editor.p5js.org/natureofcode/sketches/5C69XyrlsR
 */
 
 import "core:math/rand"

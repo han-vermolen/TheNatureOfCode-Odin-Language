@@ -8,7 +8,8 @@ package vector_subtraction
 
 /*
 Example 1.3: Vector Subtraction
-https://natureofcode.com/vectors/#example-13-vector-subtraction
+Book:   https://natureofcode.com/vectors/#example-13-vector-subtraction
+Sketch: https://editor.p5js.org/natureofcode/sketches/HtXiElQbC
 */
 
 import rl "vendor:raylib"

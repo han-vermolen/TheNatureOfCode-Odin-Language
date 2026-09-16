@@ -2,7 +2,8 @@ package accept_reject_distribution
 
 /*
 Example 0.5: An Accept-Reject Distribution
-https://natureofcode.com/random/#example-05-an-accept-reject-distribution
+Book:   https://natureofcode.com/random/#example-05-an-accept-reject-distribution
+Sketch: https://editor.p5js.org/natureofcode/sketches/3t5iHwA7Q
 */
 
 import "core:math/rand"

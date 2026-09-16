@@ -9,7 +9,8 @@ package bouncing_ball_no_vectors
 
 /*
 Example 1.1: Bouncing Ball with No Vectors
-https://natureofcode.com/vectors/#example-11-bouncing-ball-with-no-vectors
+Book:   https://natureofcode.com/vectors/#example-11-bouncing-ball-with-no-vectors
+Sketch: https://editor.p5js.org/natureofcode/sketches/oadKdOndU
 */
 
 import rl "vendor:raylib"
