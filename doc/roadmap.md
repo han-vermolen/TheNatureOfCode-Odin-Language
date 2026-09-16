@@ -50,8 +50,8 @@ introduced — so it deliberately still uses separate `x`, `y` floats, not
 | 1.1 Bouncing Ball with No Vectors | `ch01_vectors/bouncing_ball_no_vectors` | ✅ |
 | 1.2 Bouncing Ball with Vectors | `ch01_vectors/bouncing_ball_with_vectors` | ✅ |
 | 1.3 Vector Subtraction | `ch01_vectors/vector_subtraction` | ✅ |
-| 1.4 Vector Multiplication | `ch01_vectors/vector_multiplication` | ⬜ |
-| 1.5 Vector Magnitude | `ch01_vectors/vector_magnitude` | ⬜ |
+| 1.4 Vector Multiplication | `ch01_vectors/vector_multiplication` | ✅ |
+| 1.5 Vector Magnitude | `ch01_vectors/vector_magnitude` | ✅ |
 | 1.6 Vector Normalization | `ch01_vectors/vector_normalization` | ⬜ |
 | 1.7 Motion 101 (velocity) | `ch01_vectors/motion_velocity` | ⬜ |
 | 1.8 Motion 101 (velocity + constant acceleration) | `ch01_vectors/motion_accel` | ⬜ |

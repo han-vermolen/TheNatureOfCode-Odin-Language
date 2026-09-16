@@ -1,6 +1,6 @@
 /*
 Implementation note:
-The rlgl.Translatef(CENTER.x, CENTER.y, 0) is stricly not needed.
+The rlgl.Translatef(CENTER.x, CENTER.y, 0) is strictly not needed.
 It mirrors the book's translate(width/2, height/2) so the port's structure matches the book's, at the cost of a per-vertex CPU transform.
 */
 

@@ -6,8 +6,9 @@ current.
 
 **Currently reading:** Chapter 1 — Vectors
 **Currently building:** Chapter 0 complete (0.1–0.6). Chapter 1: 1.1
-(`bouncing_ball_no_vectors`), 1.2 (`bouncing_ball_with_vectors`) and 1.3
-(`vector_subtraction`) finished. Next up: 1.4 vector multiplication.
+(`bouncing_ball_no_vectors`), 1.2 (`bouncing_ball_with_vectors`), 1.3
+(`vector_subtraction`) and 1.4 (`vector_multiplication`) finished. Next up:
+1.5 vector magnitude.
 
 ## Log
 
@@ -23,5 +24,7 @@ current.
 - 2026-09-15 — Finished 1.3 (`ch01_vectors/vector_subtraction`). Split the
   roadmap's single 1.3–1.6 `vector_ops` playground into four separate
   sketches, one per book example.
+- 2026-09-16 — Finished 1.4 (`ch01_vectors/vector_multiplication`).
+- 2026-09-16 — Finished 1.5 (`ch01_vectors/vector_magnitude`).
 
 *This README was drafted with AI assistance, per the policy in `doc/use_of_ai.md`. No code in this repo was.*
